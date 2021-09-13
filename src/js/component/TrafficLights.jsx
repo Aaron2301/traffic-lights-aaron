@@ -1,5 +1,7 @@
 import React from "react";
 import { Light } from "./Light.jsx";
+import "../../styles/index.scss";
+
 export const TrafficLights = () => {
 	return (
 		<div className="all">
