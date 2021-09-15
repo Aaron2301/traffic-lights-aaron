@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Light } from "./Light.jsx";
 import "../../styles/index.scss";
-
+import { func } from "prop-types";
 export const TrafficLights = () => {
+	const [lightActive, setLightActive] = useState({
+		red: false,
+		yellow: false,
+		green: false
+	});
 	return (
 		<div className="all">
 			<div className="padreposte">
@@ -10,9 +15,21 @@ export const TrafficLights = () => {
 			</div>
 			<div id="trafficlights">
 				<div id="container">
-					<Light color="red" />
-					<Light color="yellow" />
-					<Light color="green" />
+					<Light
+						color="red"
+						active={lightActive}
+						handleActive={setLightActive}
+					/>
+					<Light
+						color="yellow"
+						active={lightActive}
+						handleActive={setLightActive}
+					/>
+					<Light
+						color="green"
+						active={lightActive}
+						handleActive={setLightActive}
+					/>
 				</div>
 			</div>
 		</div>
